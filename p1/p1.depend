@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1577625354 source:c:\users\home\desktop\p\main.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
+	"cJSON.h"
+	"cJSON.c"
+
+1576229369 c:\users\home\desktop\p\cjson.h
+	<stddef.h>
+
+1576229370 c:\users\home\desktop\p\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<limits.h>
+	<ctype.h>
+	<locale.h>
+	"cJSON.h"
+
+1577739574 source:c:\users\home\desktop\project\p\main.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
+	"cJSON.h"
+	"cJSON.c"
+
+1576229369 c:\users\home\desktop\project\p\cjson.h
+	<stddef.h>
+
+1576229370 c:\users\home\desktop\project\p\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<limits.h>
+	<ctype.h>
+	<locale.h>
+	"cJSON.h"
+
+1580563479 source:c:\users\home\desktop\project\p1\main.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
+	<windows.h>
+	"cJSON.c"
+	"cJSON.h"
+
+1576229369 c:\users\home\desktop\project\p1\cjson.h
+	<stddef.h>
+
+1576229370 c:\users\home\desktop\project\p1\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<limits.h>
+	<ctype.h>
+	<locale.h>
+	"cJSON.h"
+
