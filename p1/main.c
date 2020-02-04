@@ -17,6 +17,30 @@ char token[MAX], channel[MAX];
 bool login = false, current_channel = false;
 int status = 0;
 
+/*
+void exit_Function(){
+    if (login){
+        char buffer[MAX];
+        sprintf (buffer, "logout %s\n", token);
+        memset(token, 0, sizeof(token));
+        make_connect();
+        send (client_socket, buffer, sizeof (buffer), 0);
+        memset (buffer, 0, sizeof (buffer));
+        recv (client_socket, buffer, sizeof (buffer), 0);
+        closesocket (client_socket);
+        cJSON * recived = cJSON_Parse (buffer);
+        if (!strncmp("Successful", cJSON_GetObjectItem(recived, "type")->valuestring, sizeof("Successful"))){
+            status = 0;
+            printf ("You logged out!\n");
+            login = false;
+        }
+        else{
+            printf ("Error in logout!\n");
+        }
+    }
+}
+*/
+
 void color (int n){
     HANDLE hStdOut;
     hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -75,7 +99,7 @@ void menu1 (){
 
 void menu2 (){
     color(9);
-    printf ("\nMenu2\n1: Create channel\n2: Join channel\n3: My current channel\n4: Logout\n");
+    printf ("\nMenu2\n1: Create channel\n2: Join channel\n3: Logout and back to Menu 1\n4: My current channel\n");
     int in;
     scanf ("%d", &in);
     // Clear the screen
@@ -120,15 +144,8 @@ void menu2 (){
         }
         closesocket (client_socket);
     }
-    //My current channel
-    if (in == 3){
-        if (current_channel)
-            status = 2;
-        else
-            printf ("You are not in any channel now!\n");
-    }
     //logout
-    if (in == 4){
+    if (in == 3){
         char buffer[MAX];
         sprintf (buffer, "logout %s\n", token);
         memset(token, 0, sizeof(token));
@@ -146,6 +163,13 @@ void menu2 (){
         else{
             printf ("Error in logout!\n");
         }
+    }
+    //My current channel
+    if (in == 4){
+        if (current_channel)
+            status = 2;
+        else
+            printf ("You are not in any channel now!\n");
     }
 }
 
@@ -273,6 +297,7 @@ void make_connect(){
 int main (){
     printf ("Hello! Welcome\n");
     while (true){
+        //atexit(exit_Function);
         if (status == 0)
             menu1 ();
         if (status == 1)
